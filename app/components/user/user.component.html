@@ -1,0 +1,22 @@
+<h1>
+  {{name}}
+</h1>
+
+<ul>
+  <li>Age: {{age}}</li>
+  <li>Email: {{email}}</li>
+  <li>{{address.street}} {{address.city}}, {{address.state}}</li>
+</ul>
+
+<button (click) = "onClick()">Add job task </button>
+
+<h1>Job Tasks</h1>
+<form (submit) = "addJobTask(job_task.value)">
+  <div>
+    <label for = "job_task">Job Task:</label>
+    <input type="text" #job_task>
+  </div>
+</form>
+<ul>
+<li *ngFor="let job_task of jobTask; let i = index">{{i+1}}: {{job_task}}</li>
+</ul>
